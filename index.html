@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless Charging System Project Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> 
+</head>
+<body>
+
+    <header class="hero-section" id="hero">
+        <div class="hero-content">
+            <p class="subtitle cinematic-element">Comprehensive Development Report</p>
+            <h1 class="project-title cinematic-element">Electromagnetic Induction-Based Wireless Charging System</h1>
+            <p class="abstract cinematic-element">This report details the design, construction, and rigorous testing of a low-power Wire-less Power Transfer (WPT) system centered on the principle of **Electromagnetic Induction (EMI)**. The system successfully demonstrated contactless energy transmission between a primary (transmitter) resonant coil and a secondary (receiver) coil.</p>
+            <div class="team-info cinematic-element">
+                <p>Project Team: Rethish, Praveen, Vishal, Samiksha, Yuvasree, Selvapriya, Pavatharani</p>
+                <p>Date: November 2025</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="content-section light-bg" id="aim">
+        <div class="container">
+            <h2 class="cinematic-element">The Objective: Near-Field Inductive Coupling</h2>
+            <p class="large-text cinematic-element">The primary objective was to design and build a functional, small-scale prototype for wireless power transfer (WPT) using near-field inductive coupling. The system was designed to reliably illuminate an LED or charge a small electronic load over a short distance (~5-10 mm) while providing empirical validation of the underlying physics.</p>
+            
+            <h3 class="cinematic-element">Mechanism & Design Choices</h3>
+            <div class="grid-3 cinematic-element">
+                <div class="feature-box">
+                    <h3>Fundamental Principle</h3>
+                    <p>The system relies on **Faraday's Law of Induction**. A higher rate of change of magnetic flux (i.e., higher operating frequency) results in a greater induced voltage.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Transmitter Circuit</h3>
+                    <p>A **555 Timer IC** was configured in astable mode to generate a precise square wave oscillation in the range of **100 kHz to 200 kHz**. This high frequency minimizes the required inductance value.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Receiver Circuit</h3>
+                    <p>A **Full-Wave Bridge Rectifier** utilizing high-speed **Schottky Diodes** was implemented. Schottky diodes were chosen for their lower forward voltage drop (~0.3 V), minimizing power loss.</p>
+                </div>
+            </div>
+            
+            <div class="image-gallery cinematic-element" style="margin-top: 80px;">
+                <figure style="max-width: 800px; margin: 0 auto;">
+                    <img src="1.jpg" alt="Diagram illustrating Lenz's law and magnetic flux in a coil." />
+                    <figcaption>
+                        Figure 1: **Lenz's Law and Magnetic Flux.** 
+
+[Image of Faraday's law...]
+: This diagram illustrates how the induced magnetic field opposes the change in magnetic flux, which is the foundational principle for the Wireless Power Transfer system.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section dark-bg" id="results">
+        <div class="container">
+            <h2 class="cinematic-element">Empirical Performance and Validation</h2>
+            <div class="result-card cinematic-element">
+                <span class="metric">~78%</span>
+                <p class="description">**Maximum Power Transfer Efficiency ($\eta_{max}$)** achieved at the closest separation (0 mm gap). This is a strong result for a non-optimized, low-power prototype.</p>
+            </div>
+            <div class="key-points cinematic-element">
+                <h3>Key Observations</h3>
+                <ul>
+                    <li>**Output Voltage:** A stable **5.0 V DC output** was achieved across a constant resistive load on the secondary side.</li>
+                    <li>**Range Constraint:** Power transfer dropped below the required threshold (4.5 V) beyond **~15 mm separation**.</li>
+                    <li>**Alignment:** The system maintained over 70% of its maximum output voltage with up to **5 mm of lateral misalignment**.</li>
+                </ul>
+            </div>
+            
+            <div class="image-gallery cinematic-element" style="margin-top: 50px;">
+                <figure style="max-width: 900px; margin: 0 auto;">
+                    <img src="2.jpg" alt="Visualization of the top and bottom layers of the receiver circuit board." />
+                    <figcaption>
+                        Figure 2: **Receiver PCB Detail.** 
+
+[Image of the Receiver Circuit board attached to a device]
+: The visualization shows the printed circuit board detailing the layout of the top and bottom layers, essential for efficient rectification and minimal footprint.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section light-bg" id="future">
+        <div class="container">
+            <h2 class="cinematic-element">Future Enhancements for Commercial Viability</h2>
+            <p class="large-text cinematic-element">The system's current performance validates the theoretical dependence of efficiency on high-frequency oscillation and critical coil alignment. Future work will focus on three major enhancements to improve real-world usability:</p>
+            <div class="grid-3 cinematic-element">
+                <div class="feature-box">
+                    <h3>1. Resonant Matching Optimization</h3>
+                    <p>Implementation of a precise, coupled **LC-Tank Resonant Circuit** on both sides. This would significantly increase the Quality factor ($Q$) of the coils and extend the functional charging range up to **50-100 percent**.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>2. Foreign Object Detection (FOD)</h3>
+                    <p>Integrating a mechanism to detect metallic objects between the coils is crucial for safety. This prevents power loss due to eddy currents and localized heating.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>3. Feedback and Power Control</h3>
+                    <p>Developing a simple communication channel would allow the receiver to request variable power levels. This approach will maximize efficiency and reduce standby power consumption.</p>
+                </div>
+            </div>
+
+            <div class="image-gallery cinematic-element" style="margin-top: 50px;">
+                <figure style="max-width: 800px; margin: 0 auto;">
+                    <img src="3.jpg" alt="Infographic displaying the gradual progression of a phone's battery charge." />
+                    <figcaption>
+                        Figure 3: **Charging Progression Visualization.** 
+
+[Image of the final prototype charging a phone]
+: This infographic illustrates the gradual progression of a phone's battery charge (15% Charge to 100% Charge), visually representing the successful and stable power output of the WPT system.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Project Report by: Rethish, Praveen, Vishal, Samiksha, Yuvasree, Selvapriya, Pavatharani. &copy; 2025.</p>
+    </footer>
+
+</body>
+</html>
