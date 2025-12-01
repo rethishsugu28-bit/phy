@@ -25,7 +25,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 100px 20px; /* Reduced vertical padding for smaller screens */
 }
 
 /* --- CINEMATIC TYPOGRAPHY & HEADINGS --- */
@@ -169,7 +169,7 @@ h3 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for professionalism */
+/* Hover effect for professionalism (Disabled on touch devices for simplicity) */
 .feature-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -228,3 +228,79 @@ h3 {
 .cinematic-element:nth-child(3) { transition-delay: 0.3s; } /* abstract */
 .cinematic-element:nth-child(4) { transition-delay: 0.4s; } /* team-info */
 .cinematic-element.grid-3 { transition-delay: 0.5s; } /* grid sections */
+
+
+/* ========================================================== */
+/* MOBILE OPTIMIZATIONS (MEDIA QUERIES)             */
+/* ========================================================== */
+
+@media (max-width: 768px) {
+    
+    .container {
+        padding: 50px 15px; /* Reduce overall padding on mobile */
+    }
+
+    /* Adjust font sizes for mobile readability and screen real estate */
+    .project-title {
+        font-size: 2.5rem; /* Smaller title */
+    }
+
+    h2 {
+        font-size: 2rem; /* Smaller main headings */
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 3px; /* Reduce letter spacing */
+    }
+
+    .abstract, .large-text {
+        font-size: 1.1rem; /* Smaller body text */
+        margin-bottom: 30px;
+    }
+    
+    .team-info p {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust Hero Section padding */
+    .hero-section {
+        padding-left: 15px;
+        background-attachment: scroll; /* Disable fixed background for mobile performance */
+    }
+    
+    /* Change the 3-column grid to a single column stack on mobile */
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 20px; /* Reduced gap between boxes */
+        margin-top: 30px;
+    }
+
+    .feature-box {
+        padding: 20px;
+    }
+    
+    /* Metric Card adjustments */
+    .result-card {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+
+    .metric {
+        font-size: 4rem; /* Smaller metric number */
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+    
+    /* Footer adjustments */
+    .footer {
+        padding: 15px 10px;
+    }
+}
